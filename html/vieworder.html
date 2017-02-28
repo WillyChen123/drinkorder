@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<div align='center'>
+<a href="/chooseorderdrink">訂購飲料</a>
+</div>
+<br>
+<div class="col-md-12">    
+<table class="table table-bordered" border="1">
+	<tr >
+		<th class="col-md-2">
+			訂單名稱
+		</th>
+		<th class="col-md-2">
+			建&nbsp; 立&nbsp; 者
+		</th>
+		<th class="col-md-2">
+			商店名稱
+		</th>
+		<th class="col-md-2">
+			截止時間
+		</th>
+		<th class="col-md-2">
+			允許訂購
+		</th>
+	</tr>
+
+	{%for order in orders%}
+	<tr>
+		<td align="center">
+			<a href="/accountorder?search={{order.order_name}}">
+			{{order.order_name}}
+			</a>
+		</td>
+		<td align="center">
+			{{order.create_user}}
+		</td>
+		<td align="center">
+			{{order.store_name}}
+		</td>
+		<td align="center">
+			{{order.deadline_year}}年{{order.deadline_month}}月{{order.deadline_day}}日&nbsp;{{order.deadline_hour}}時{{order.deadline_minute}}分
+		</td>
+		<td align="center">
+			{%if order.isopen%}
+				是
+			{%else%}
+				否
+			{%endif%}
+	</tr>
+	{%endfor%}
+</table>
+</div>
+	
+{% endblock %}

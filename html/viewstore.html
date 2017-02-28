@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<div align='center'>
+<a href="/addstore">新增商店</a>
+</div>
+<br>
+<div class="col-md-12">    
+<table class="table table-bordered" border="1">
+	<tr>
+		<th class="col-md-6">
+			商店名稱
+		</th>
+		<th class="col-md-6">
+			電話
+		</th>
+	</tr>
+
+	{%for store in stores%}
+	<tr>
+		<td align="center">
+			{{store.store_name}}
+		</td>
+		<td align="center">
+		{{store.phone}}
+		</td>
+	</tr>
+	{%endfor%}
+</table>
+</div>
+
+	
+{% endblock %}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}	
+	<div class="alert alert-danger" role="alert">
+            <strong>您的帳號已被管理員{{stop_admin}}停權，詳情請洽管理員</strong>
+        </div>
+	<br>
+	<div align='center'>
+		<a href='/logout' > 登出 </a>
+	</div>
+{% endblock %}

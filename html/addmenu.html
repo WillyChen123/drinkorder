@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+<html>
+	<head>
+		<title>Welcome to Drink Order </tilte>
+	</head>
+	<body>
+	{% block content %}
+	<form method="post">	
+	<div class="col-md-12">
+	<table class="table table-bordered">	
+		<tr>
+			<td>
+				飲料名稱
+			</td>
+			<td>
+				<input type='text' name='menu_name' value='{{menu_name}}'>
+			</td>		
+		</tr>
+		<tr>
+			<td>
+				飲料價格
+			</td>
+			<td>
+				<input type='number' name='price' value='{{price}}'>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				商店店名
+			</td>
+			<td>
+			<select name = 'store_name'>
+				{%for menu_group in menu_groups%}					
+					<option value="{{menu_group.store_name}}">{{menu_group.store_name}}</option>
+				{%endfor%}
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				飲料群組
+			</td>
+			<td>
+			<select name = 'menu_group_name'>
+				{%for menu_group in menu_groups%}					
+					<option value="{{menu_group.store_name}},{{menu_group.menu_group_name}}">{{menu_group.store_name}} , {{menu_group.menu_group_name}}</option>
+				{%endfor%}
+			</select>
+			</td>
+		</tr>
+	</table>	
+	{%if error%}
+		<div class="alert alert-danger" role="alert">
+			<strong>{{error}}</strong>
+		</div>
+	{%endif%}
+		<div align='center'>		
+			<input type='submit' class="btn btn-sm btn-primary" value='添加'>
+		</div>
+	</div>
+	</form>
+	<br>
+	<div align='center'>	
+		<p class='tip'> ** 飲料名稱字數最多15個字 ** </p>
+	</div>
+	{% endblock %}
+
+
+	</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}	
+
+
+<p align='center'> 管理訂單 {{username}} </p>
+<br>
+<form method="post">
+	<div class="col-md-12">    
+	<table class="table table-bordered" border="1">
+		<tr>
+			<th class="col-md-3">
+				訂單名稱
+			</th>
+			<th class="col-md-3">
+				訂單建立
+			</th>
+			<th class="col-md-3">
+				截止時間
+			</th>
+			<th class="col-md-3">
+				停止訂購
+			</th>
+		</tr>
+
+		{%for order in orders%}
+		<tr>
+			<td align="center">
+				<a href="/accountorder?search={{order.order_name}}">
+				{{order.order_name}}
+				</a>
+			</td>
+			<td align="center">
+			{{order.create_user}}
+			</td>
+			<td align="center">
+			{{order.deadline_year}}年{{order.deadline_month}}月{{order.deadline_day}}日&nbsp;{{order.deadline_hour}}時{{order.deadline_minute}}分
+			</td>
+			<td align="center">
+				{%if order.isopen%}
+					<input type="radio" name="{{order.order_name}}isopen" value = "False">
+				{%else%}
+					<input type="radio" name="{{order.order_name}}isopen" value= "False" checked="True">
+				{%endif%}
+		</tr>
+		{%endfor%}	
+	</table>
+	</div>
+	<br>
+	<div align='center'>
+	<input type='submit' class="btn btn-sm btn-primary" value='修改'>
+	</div>
+</form>
+
+
+
+	
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div align='center'>
+	<a href='/welcome' > 返回主頁 </a>
+</div>
+<form method="post">	
+	<div class="col-md-12">    
+	<br>
+	<table class="table table-bordered" border="1">
+		<tr>
+			<td>
+				選取訂單
+			</td>
+			<td>
+				{{order_name}}&nbsp;,&nbsp;{{create_user}}
+				<input type='hidden' name='order_name' value='{{order_name}}'>
+				<input type='hidden' name='create_user' value='{{create_user}}'>
+			</td>			
+		</tr>	
+		<tr>
+			<td>
+				商店名稱
+			</td>
+			<td>
+				{{store_name}}
+				<input type='hidden' name='store_name' value='{{store_name}}'>
+			</td>			
+		</tr>	
+		<tr>
+			<td>
+				飲料群組
+			</td>
+			<td>
+				<select name = 'menu_group_no'>
+				{%for menu_group in menu_groups%}
+					<option value="{{menu_group.menu_group_no}}">{{menu_group.menu_group_name}}</option>
+				{%endfor%}
+				</select>
+			</td>			
+		</tr>	
+	</table>
+	</div>
+	<br>
+	<div align='center'>
+		<input type='submit' class="btn btn-sm btn-primary" value='選取'>
+	</div>
+	</form>
+{% endblock %}

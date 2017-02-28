@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+
+{% block content %}
+	<div class="col-md-12">
+	<table class="table table-bordered">	
+	<tr>
+		<td>
+			訂&nbsp;&nbsp;&nbsp;&nbsp;單&nbsp;&nbsp;
+		</td>
+		<td>
+			<a href="/createorder">建立訂單</a>			
+			&nbsp;
+			<a href="/manageorder">管理訂單</a>				
+		</td>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+		<td>
+			訂飲料&nbsp;&nbsp;
+		</td>
+		<td>
+			<a href="/chooseorderdrink">訂購飲料</a>
+			&nbsp;
+			<a href="/vieworder">查看訂單</a>
+			&nbsp;
+			<a href="/mydrink">我的飲料</a>
+		</td>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+		<td rowspan="2">			
+			飲&nbsp;&nbsp;&nbsp;&nbsp;料&nbsp;&nbsp;
+		</td>
+		<td>
+			<a href="/viewmenu">查看飲料</a>
+			&nbsp;
+			<a href="/addmenu">新增飲料</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="/viewmenugroup">查看群組</a>
+			&nbsp;
+			<a href="/addmenugroup">新增群組</a>
+		</td>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+		<td>						
+			商&nbsp;&nbsp;&nbsp;&nbsp;店&nbsp;&nbsp;
+		</td>
+		<td>
+			<a href="/viewstore">查看商店</a>
+			&nbsp;
+			<a href="/addstore">新增商店</a>
+		</td>			
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+	</tr>
+	<tr>
+		<td>			
+			帳&nbsp;&nbsp;&nbsp;&nbsp;號&nbsp;&nbsp;
+		</td>
+		<td>
+			<a href="/accountuser">帳號管理</a>
+			&nbsp;
+			<a href="/changepassword">變更密碼</a>
+		</td>
+	</tr>
+	</table>
+</div>
+	{% endblock %}
+

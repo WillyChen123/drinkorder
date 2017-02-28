@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+<html>
+	<head>
+		<title>Welcome to Drink Order</tilte>
+	</head>
+	<body>
+	{% block content %}	
+		<h1>Drink Order </h1>
+		<br>
+		<ul style='list-style-position:inside;'>
+			<li>
+				<a href='/welcome' >首頁</a>
+			</li>
+			<li>
+				<a href='#' >訂單</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/createorder">建立訂單</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/manageorder">管理訂單</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/chooseaccountorder">結算訂單</a>
+			</li>
+			<li>
+				<a href='#' >訂飲料</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/chooseorderdrink">訂購飲料</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/vieworder">查看訂單</a>
+			</li>
+			<li>
+				<a href='#' >飲料</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/viewmenu">查看飲料</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+	                  <a href="/addmenu">新增飲料</a>
+			</li>
+			<li>
+				<a href='#' >商店</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/viewstore">查看商店</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+	                  	<a href="/addstore">新增商店</a>
+			</li>
+			<li>
+				<a href='#' >其他</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/about">關於 </a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+	                  	<a href="/sitemap">導覽</a><br>&nbsp;&nbsp;&nbsp;&nbsp;
+	                  	<a href="/changepassword">變更密碼</a>
+			</li>
+		</ul>
+	{% endblock %}
+
+
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Drink Order Page">
+    <meta name="author" content="Guan-Sheng Chen">
+    <meta name="copyright" content="Program by Guan-Sheng Chen in 2014" />
+    <meta name="keywords" content="drink order" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+     <title>Welcome to Drink Order</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/signup.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form method='post' class="form-signin" role="form">
+        <div align='center'>
+        <h2 class="form-signin-heading">註冊</h2>
+        </div>
+        <label for="inputText" class="sr-only">帳號 </label>
+        <input type="text" name="username" id="inputText" class="form-control" placeholder="帳號 (6-10)" required autofocus>
+        {%if error_username%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error_username}}</strong>
+        </div>
+        {%endif%}
+        <label for="inputPassword" class="sr-only">密碼</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密碼 (6-20)" required>
+        {%if error_password%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error_password}}</strong>
+        </div>
+        {%endif%}
+        <label for="inputPassword" class="sr-only">密碼</label>
+        <input type="password" name="verify" id="inputPassword" class="form-control" placeholder="密碼 (6-20)" required>
+        {%if error_verify%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error_verify}}</strong>
+        </div>
+        {%endif%}
+        <label for="inputText" class="sr-only">姓名</label>
+        <input type="text" name="chinesename" id="inputText" class="form-control" placeholder="姓名 (2-3)" required>
+        {%if error_chinesename%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error_chinesename}}</strong>
+        </div>
+        {%endif%}
+        <label for="inputText" class="sr-only">邀請碼</label>
+        <input type="Text" name="answer" id="inputText" class="form-control" placeholder="邀請碼" required>
+        {%if error_answer%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error_answer}}</strong>
+        </div>
+        {%endif%}
+        <div class="checkbox">
+          <label>
+            <!-- <input type="checkbox" name='admin' > 管理員 -->
+          </label>
+        </div>
+        <div class="checkbox">
+            <h4>請先同意以下事項再繼續使用本網站</h4>
+            <h4>*</h4>
+            <h4>*</h4>
+            <h4>*</h4>
+          <label>
+            <input type="checkbox" name='agree' value="agree"> 我同意
+          </label>
+        </div>
+        {%if error_agree%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error_agree}}</strong>
+        </div>
+        {%endif%}
+        <input type="submit" value='註冊' class="btn btn-lg btn-primary btn-block">
+      </form>
+
+      <hr class="featurette-divider">
+    <!-- FOOTER -->
+    <div>
+      <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>Program:Guan-Sheng Chen · Design:<a href="http://getbootstrap.com/">Bootstrap</a> · Language:Chinese</p>
+          </footer>
+    </div>
+    </div> <!-- /container -->
+  </body>
+</html>

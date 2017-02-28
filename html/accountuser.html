@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<p align='center'>管理員 {{username}}  </p>
+<br>
+<form method="post">
+	<div class="col-md-12">    
+	<table  class="table table-bordered" border="1" >
+		<tr>
+			<th class="col-md-2">
+				帳號
+			</th>
+			<th class="col-md-2">
+				姓名
+			</th>
+			<th class="col-md-2">
+				帳號別
+			</th>
+			<th class="col-md-2">
+				停權
+			</th>
+			<th class="col-md-2">
+				停權管理員
+			</th>
+		</tr>
+
+		{%for user in users%}
+		<tr>
+			<td align="center">
+				{{user.name}}
+			</td>
+			<td align="center">
+				{{user.chinesename}}
+			</td>
+			<td align="center">
+			{%if user.admin%}
+				管理人員
+			{%else%}
+				一般帳號
+			{%endif%}	
+			</td>
+			<td align="center">
+			{%if user.stop%}
+				<input type="checkbox" name="{{user.name}},stop" value="True" checked="True">
+			{%else%}
+				<input type="checkbox" name="{{user.name}},stop" value="True">
+			{%endif%}
+			</td>
+			<td>
+				{{user.stop_admin}}
+			</td>
+		</tr>
+		{%endfor%}
+	</table>
+	</div>
+	<br>
+	<div align='center'>
+	<input type='submit' class='btn btn-sm btn-primary' value='修改'>
+	</div>
+</form>
+
+	
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<div align='center'>
+<a href="/addmenu">新增飲料</a>
+<br>
+<br>
+<form method='post'>
+<select name = 'search'>
+			{%for group in groups%}					
+			<option value="{{group.store_name}},{{group.menu_group_name}}">{{group.store_name}} , {{group.menu_group_name}}</option>			
+			{%endfor%}
+</select>
+<br>
+<br>
+<input type='submit' class="btn btn-sm btn-primary" value='查詢'>
+</form>
+</div>
+<br>
+<div class="col-md-12">    
+<table class="table table-bordered" border="1">
+	<tr >
+		<th class="col-md-3">
+			商店名稱
+		</th>
+		<th class="col-md-3">
+			飲料群組
+		</th>
+		<th class="col-md-3">
+			飲料名稱
+		</th>
+		<th class="col-md-3">
+			飲料價格
+		</th>
+	</tr>
+
+	{%for menu in menus%}
+	<tr>
+		<td align="center">
+			{{menu.store_name}}
+		</td>
+		<td align="center">
+			{{menu.menu_group_name}}
+		</td>
+		<td align="center">
+			{{menu.menu_name}}
+		</td>
+		<td align="center">
+		{{menu.price}}
+		</td>
+	</tr>
+	{%endfor%}
+</table>
+</div>
+
+	
+{% endblock %}

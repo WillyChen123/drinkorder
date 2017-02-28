@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+	<div align='center'>
+		<a href='/welcome' > 返回主頁 </a>
+	</div>
+	<br>
+	<form method="post">
+	<div align='center'>	
+		<p>選取訂單</p>
+		<select name = 'order'>
+			{%for order in orders%}					
+				{%if order.isopen%}
+					<option value="{{order.order_name}},{{order.create_user}}">{{order.order_name}}&nbsp;,&nbsp;{{order.create_user}}</option>
+					{%endif%}
+			{%endfor%}
+			</select>	
+		<br>
+		<br>
+		<input type='submit' class="btn btn-sm btn-primary" value='選取'>
+	</div>		
+	</form>
+{% endblock %}

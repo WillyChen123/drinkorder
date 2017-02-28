@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<div align='center'>
+<p> 統計訂單 {{sorder_name}} , {{creatusername}} </p>
+<br>
+<p> 商店名稱 {{store_name}} </p>
+</div>
+<br>
+<form method="post">
+	<div class="col-md-12">        
+	<table  class="table table-bordered" border="1">
+		<tr >
+			<th class="col-md-1">
+				訂購人
+			</th>
+			<th class="col-md-1">
+				飲  料
+			</th>
+			<th class="col-md-1">
+				冷  熱
+			</th>
+			<th class="col-md-1">
+				冰  塊
+			</th>
+			<th class="col-md-1">
+				糖  量
+			</th>
+			<th class="col-md-1">
+				數  量
+			</th>
+			<th class="col-md-1">
+				總  額
+			</th>
+			<th class="col-md-1">
+				付  款
+			</th>
+		</tr>
+
+		{%for perorder in perorders%}
+		<tr>
+			<td align="center">
+				{{perorder.order_user_chinesename}}
+			</td>
+			<td align="center">
+				{{perorder.drink_name}}
+			</td>
+			<td align="center">
+				{{perorder.hot_cold}}
+			</td>
+			<td align="center">
+				{{perorder.ice}}
+			</td>
+			<td align="center">
+				{{perorder.sugar}}
+			</td>
+			<td align="center">
+				{{perorder.order_num}}
+			</td>
+			<td align="center">
+				{{perorder.total}}
+			</td>
+			<td align="center">
+				{%if perorder.order_paid%}
+					<input type="radio" name="{{perorder.drink_name}},{{perorder.order_user}}order_paid" value = "True" checked="True">
+				{%else%}
+					<input type="radio" name="{{perorder.drink_name}},{{perorder.order_user}}order_paid" value = "True">
+				{%endif%}
+		</tr>
+		{%endfor%}
+
+	</table>
+	</div>
+	<br>
+	<div align='center'>
+		<p>全部金額: {{all_total}} 元</p>
+	</div>
+	<br>
+	<div class="col-md-12">        
+	<table  class="table table-bordered" border="1">
+		<tr>
+			<th class="col-md-6">
+				飲  料
+			</th>
+			<th class="col-md-6">
+				數  量
+			</th>			
+		</tr>
+	
+	{%for count_order_name in count_order_name  %}
+	<tr>		
+			<td align="center">
+				{{count_order_name}}
+			</td>
+			<td align="center">
+				{{count_order_num[loop.index0]}}
+			</td>	
+	</tr>	
+	{%endfor%}	
+	</table>
+	</div>
+	<br>
+	<div align='center'>
+		<input type='submit' class="btn btn-sm btn-primary" value='修改'>
+	</div>
+ </form>
+
+	
+{% endblock %}

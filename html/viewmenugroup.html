@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<div align='center'>
+<a href="/addmenugroup">新增飲料群組</a>
+</div>
+<br>
+<div class="col-md-12">    
+<table class="table table-bordered" border="1">
+	<tr>
+		<th class="col-md-6">
+			商店名稱
+		</th>
+		<th class="col-md-6">
+			群組名稱
+		</th>
+	</tr>
+
+	{%for menu_group in menu_groups%}
+	<tr>
+		<td align="center">
+			{{menu_group.store_name}}
+		</td>
+		<td align="center">
+		{{menu_group.menu_group_name}}
+		</td>
+	</tr>
+	{%endfor%}
+</table>
+</div>
+
+	
+{% endblock %}

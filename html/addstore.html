@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form method="post">	
+	<div class="col-md-12">
+	<table class="table table-bordered">	
+		<tr>
+			<td>
+				商店名稱
+			</td>
+			<td>
+				<input type='text' name='store_name' value='{{store_name}}'>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				商店電話
+			</td>
+			<td>
+				<input type='number' name='phone' value='{{phone}}'>
+			</td>
+		</tr>
+	</table>	
+	{%if error%}
+		<div class="alert alert-danger" role="alert">
+			<strong>{{error}}</strong>
+		</div>
+	{%endif%}
+		<div align='center'>		
+			<input type='submit' class="btn btn-sm btn-primary" value='添加'>
+		</div>
+	</div>
+	</form>
+	<br>
+	<div align='center'>		
+	<p> ** 商店名稱字數最多8個字 ** </p>
+	</div>
+{% endblock %}

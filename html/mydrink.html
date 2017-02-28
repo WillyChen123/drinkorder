@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}	
+
+<div align='center'>
+<p>{{username}}的飲料 </p>
+</div>
+<br>
+<div class="col-md-12">        
+	<table  class="table table-bordered" border="1">
+		<tr>
+			<th class="col-md-1">
+				訂  單 
+			</th>
+			<th class="col-md-1">
+				商  店 
+			</th>
+			<th class="col-md-1">
+				飲  料
+			</th>
+			<th class="col-md-1">
+				冷  熱
+			</th>
+			<th class="col-md-1">
+				冰  塊
+			</th>
+			<th class="col-md-1">
+				糖  量
+			</th>
+			<th class="col-md-1">
+				數  量
+			</th>
+			<th class="col-md-1">
+				總  額
+			</th>
+			<th class="col-md-1">
+				付  款
+			</th>
+		</tr>
+
+		{%for drink in drinks%}
+		<tr>
+			<td align="center">
+				{{drink.order_name}}
+			</td>
+			<td align="center">
+				{{drink.store_name}}
+			</td>
+			<td align="center">
+				{{drink.drink_name}}
+			</td>
+			<td align="center">
+				{{drink.hot_cold}}
+			</td>
+			<td align="center">
+				{{drink.ice}}
+			</td>
+			<td align="center">
+				{{drink.sugar}}
+			</td>
+			<td align="center">
+				{{drink.order_num}}
+			</td>
+			<td align="center">
+				{{drink.total}}
+			</td>
+			<td align="center">
+				{%if drink.order_paid%}
+					是
+				{%else%}
+					否
+				{%endif%}
+		</tr>
+		{%endfor%}
+	</table>
+</div>
+
+	
+{% endblock %}

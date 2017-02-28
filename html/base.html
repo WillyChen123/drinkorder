@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Drink Order Page">
+	<meta name="author" content="Guan-Sheng Chen">
+	<meta name="copyright" content="Program by Guan-Sheng Chen in 2014" />
+	<meta name="keywords" content="drink order" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	 <title>Welcome to Drink Order</title>
+	 <!-- Bootstrap core CSS -->
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap theme -->
+	<link href="/stylesheets/bootstrap-theme.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="/stylesheets/theme.css" rel="stylesheet">
+	
+
+</head>
+
+<body>
+
+	<!-- Fixed navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/welcome">Drink Order</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<!-- <li class="active"><a href="/welcome">首頁</a></li> -->
+						<li><a href="/welcome">首頁</a></li>						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">訂單<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/createorder">建立訂單</a></li>
+								<li><a href="/manageorder">管理訂單</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">訂飲料<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/orderdrink">訂購飲料</a></li>
+								<li><a href="/vieworder">查看訂單</a></li>
+								<li><a href="/mydrink">我的飲料</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">飲料<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/viewmenu">查看飲料</a></li>
+								<li><a href="/addmenu">新增飲料</a></li>
+								<li><a href="/viewmenugroup">查看群組</a></li>
+								<li><a href="/addmenugroup">新增群組</a></li>
+							</ul>							   
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">商店<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/viewstore">查看商店</a></li>
+								<li><a href="/addstore">新增商店</a></li>
+							</ul>
+						</li>	
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">帳號<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/accountuser">帳號管理</a></li>
+								<li><a href="/changepassword">變更密碼</a></li>
+							</ul>
+						</li>							
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href='/changepassword'>{%if admin%} 管理員 {%else%} 使用者 {%endif%}{{chinesename}}</a></li>
+						<li><a href="/logout">登出</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container" >
+		{% block content %}
+	  	{% endblock %}
+		</div>
+		
+		<hr class="featurette-divider">
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="container">
+		        <p class="pull-right"><a href="/about">About</a> · <a href="#">Back to top</a></p>
+		        <div align='center'>
+		        <p>Program:Guan-Sheng Chen · Design:<a href="http://getbootstrap.com/">Bootstrap</a>  · Language:Chinese</p>
+		      </div>
+		      </footer>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		</body>  
+</html>
+

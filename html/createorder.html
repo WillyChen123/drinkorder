@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form method="post">	
+	<div class="col-md-12">
+	<table class="table table-bordered">	
+		<tr>
+			<td>
+				訂單建立
+			</td>
+			<td>
+				{{username}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				訂單名稱
+			</td>
+			<td>
+				<input type='number' name='order_name' value='{{order_name}}'>	
+			</td>	
+		</tr>
+		<tr>
+			<td>
+				商店名稱
+			</td>
+			<td>
+			<select name = 'store_name'>
+				{%for store in stores%}					
+					<option value="{{store.store_name}}">{{store.store_name}}</option>
+				{%endfor%}
+			</select>	
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">
+				截止時間
+			</td>
+			<td>
+				<input type='number' name='deadline_year' value='{{current_year}}' maxlength='4' style='width:50px'>
+				年
+				<input type='number' name='deadline_month' value='{{current_month}}' maxlength='2' style='width:40px'>
+				月
+				<input type='number' name='deadline_day' value='{{current_day}}' maxlength='2' style='width:40px'>
+				日
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type='number' name='deadline_hour' value='8' maxlength='2' style='width:40px'>
+				時
+				<input type='number' name='deadline_minute' value='0' maxlength='2' style='width:40px'>
+				分
+			</td>
+		</tr>		
+	</table>	
+	{%if error%}
+		<div class="alert alert-danger" role="alert">
+			<strong>{{error}}</strong>
+		</div>
+	{%endif%}
+	<div align='center'>		
+		<input type='submit' class="btn btn-sm btn-primary" value='添加'>
+	</div>
+	</div>
+	</form>
+	<br>
+	<div align='center'>	
+	<p > ** 訂單名稱請輸入年月日共{{order_name_len}}位數字，方便排序 ** </p>
+	<p > ** EX: 2014年12月3日 &gt;&gt; 20141203 ** </p>
+	</div>
+{% endblock %}

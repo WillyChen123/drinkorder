@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<html>
+  <head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Drink Order Page">
+  <meta name="author" content="Guan-Sheng Chen">
+  <meta name="copyright" content="Program by Guan-Sheng Chen in 2014" />
+  <meta name="keywords" content="drink order" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+   <title>Welcome to Drink Order</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form method='post' class="form-signin" role="form">
+        <div align='center'>
+        <h2 class="form-signin-heading">Drink Order</h2>
+        <h3 class="form-signin-heading">請輸入帳號密碼</h3>
+        </div>
+        <label for="inputEmail" class="sr-only">帳號</label>
+        <input type="text" name="username" id="inputText" class="form-control" placeholder="帳號" required autofocus>        
+        <label for="inputPassword" class="sr-only">密碼</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密碼" required>
+        <input type="submit" value='登入' class="btn btn-lg btn-primary btn-block">
+        {%if error%}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{error}}</strong>
+        </div>
+        {%endif%}
+      </form>
+      <div align='center'>
+      <a href='/signup'>註冊</a>
+      </div>
+      <hr class="featurette-divider">
+        <!-- FOOTER -->
+        <div>
+          <footer>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>Program:Guan-Sheng Chen · Design:<a href="http://getbootstrap.com/">Bootstrap</a> · Language:Chinese</p>
+              </footer>
+        </div>
+    </div>   
+  </body>
+</html>
+

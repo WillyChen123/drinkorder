@@ -914,4 +914,4 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                 ('/accountusersuccessful',AccountUserSuccessful),
                                 ('/mydrink',MyDrink)
                                 ],
-                                debug=True)
+                                debug=debug)

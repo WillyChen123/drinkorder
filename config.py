@@ -11,3 +11,6 @@ invitation_code = u"Example"
 
 #Order Name Length
 order_name_len = 8
+
+#Debug Option
+debug = False

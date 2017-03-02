@@ -3,12 +3,11 @@
 A Simple Website on Google App Engine
 
 ##Introduction
-每個帳號可以透過登入網站及輸入欲訂購之飲料  
-協助訂購人統計飲料數量及金額
+This website assists in counting the number of drinks.
 
 ##Usage
 
-####LocalHost
+####Localhost
 
 ```
 dev_appserver.py drinkorder
@@ -20,8 +19,9 @@ dev_appserver.py drinkorder
 appcfg.py update drinkorder
 ```
 
-##Config
-See the config.py
+##Settings
+See the config.py  
+Edit [about.html](https://github.com/WillyChen123/drinkorder/blob/master/html/about.html) and [signup.html](https://github.com/WillyChen123/drinkorder/blob/master/html/signup.html) to update website terms of service 
 
 ##Template
 [Bootstrap](http://getbootstrap.com/)

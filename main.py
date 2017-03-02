@@ -385,8 +385,9 @@ class CreateOrder(Handler):
                 stores=storequery.fetch(None,0)
                 current_year = datetime.date.today().strftime("%Y")
                 current_month = datetime.date.today().strftime("%m")
-                current_day = datetime.date.today().strftime("%d")                
-                self.render('createorder.html',username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename , stores = stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
+                current_day = datetime.date.today().strftime("%d")
+                sorder_name = "" + current_year + (current_month if current_month>=10 else "0"+current_month)+(current_day if current_day>=10 else "0"+current_day)
+                self.render('createorder.html',username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename , order_name = sorder_name , stores = stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
             elif self.user.stop:
                 self.redirect('/stop')
         else:
@@ -410,7 +411,7 @@ class CreateOrder(Handler):
             storequery=Store.all()
             stores=storequery.fetch(None,0)
             msg = u"請重試一遍"
-            self.render('createorder.html', error=msg,username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename,stores=stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
+            self.render('createorder.html', error=msg,username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename, order_name = sorder_name ,stores=stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
             have_error = True        
         if not have_error:
             deadline_year = int(sdeadline_year)
@@ -422,7 +423,7 @@ class CreateOrder(Handler):
                 storequery=Store.all()
                 stores=storequery.fetch(None,0)
                 msg = u"請重試一遍"
-                self.render('createorder.html', error=msg,username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename,stores=stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
+                self.render('createorder.html', error=msg,username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename,order_name = sorder_name ,stores=stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
             else:
                 order_name = int(sorder_name)
                 u = Order.by_order_name(order_name , self.user.name)
@@ -430,7 +431,7 @@ class CreateOrder(Handler):
                     storequery=Store.all()
                     stores=storequery.fetch(None,0)
                     msg = u'已有此訂單'
-                    self.render('createorder.html', error = msg ,username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename,stores=stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
+                    self.render('createorder.html', error = msg ,username = self.user.name , admin = self.user.admin,chinesename = self.user.chinesename,order_name = sorder_name ,stores=stores,order_name_len=order_name_len,current_year=current_year,current_month=current_month,current_day=current_day)
                 else:               
                     u = Order.create_order(order_name , deadline_year , deadline_month,deadline_day,deadline_hour,deadline_minute,self.user.name,store_name,isopen)
                     u.put()

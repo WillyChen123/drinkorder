@@ -2,29 +2,29 @@
 
 A Simple Website on Google App Engine
 
-##Introduction
+## Introduction
 This website assists in counting the number of drinks.
 
-##Usage
+## Usage
 
-####Localhost
+#### Localhost
 
 ```
 dev_appserver.py drinkorder
 ```
 
-####Online
+#### Online
 
 ```
 appcfg.py update drinkorder
 ```
 
-##Settings
-See the config.py  
-Edit [about.html](https://github.com/WillyChen123/drinkorder/blob/master/html/about.html) and [signup.html](https://github.com/WillyChen123/drinkorder/blob/master/html/signup.html) to update website terms of service 
+## Settings
+See the [config.py](https://github.com/WillyChen123/drinkorder/blob/master/config.py)  
+Edit the [about.html](https://github.com/WillyChen123/drinkorder/blob/master/html/about.html) and the [signup.html](https://github.com/WillyChen123/drinkorder/blob/master/html/signup.html) to update website terms of service 
 
-##Template
+## Template
 [Bootstrap](http://getbootstrap.com/)
 
-##Author
+## Author
 [Willy Chen](https://github.com/WillyChen123)
